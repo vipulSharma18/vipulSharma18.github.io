@@ -26,7 +26,7 @@ Open your browser and go to: `http://localhost:4000`
 - `assets/` - CSS, JavaScript, and other assets
 - `img/` - Images
 - `index.html` - Homepage
-- `about.html` - About page
+- `reading.html` - Reading list page
 
 ## Creating a New Blog Post
 
