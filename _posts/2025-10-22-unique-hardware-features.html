@@ -1,0 +1,95 @@
+---
+layout: post
+title: "GPU Hardware Features: NVIDIA and AMD"
+subtitle: "A comprehensive overview of modern GPU architectures and their unique features"
+date: 2025-10-22 14:20:00
+background: '/img/bg-post.jpg'
+---
+
+<h2>NVIDIA GPU Architectures</h2>
+
+<p>Here's a breakdown of NVIDIA's recent GPU architectures and their compute capabilities:</p>
+
+<ul>
+  <li><strong>Sm89: Ada</strong> (RTX 4090, 4080, 4070) → Compute Capability: 8.9</li>
+  <li><strong>Sm90: Hopper</strong> (H100, H200) → Compute Capability: 9.0</li>
+  <li><strong>Sm100: Blackwell Datacenter</strong> (B200) → Compute Capability: 10.0</li>
+  <li><strong>Sm120: Blackwell Consumer</strong> (RTX 5090, 5080, 5070) → Compute Capability: 12.0</li>
+</ul>
+
+<h2>AMD GPU Architectures</h2>
+
+<p><em>To be completed - currently gathering information</em></p>
+
+<p>One interesting observation: AMD uses the term "Matrix Core" instead of NVIDIA's "Tensor Core" terminology.</p>
+
+<h3>Key AMD Resources</h3>
+<ul>
+  <li><a href="https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html">ROCm Compatibility Matrix</a></li>
+  <li><a href="https://rocm.docs.amd.com/en/latest/reference/gpu-arch-specs.html">GPU Architecture Specifications</a></li>
+  <li><a href="https://rocm.blogs.amd.com/software-tools-optimization/matrix-cores-cdna/README.html">Matrix Cores in CDNA</a> - Low bit matmul instructions</li>
+  <li><a href="https://github.com/ROCm/composable_kernel">Composable Kernel</a> - AMD's equivalent to NVIDIA's CUTLASS</li>
+  <li><a href="https://github.com/ROCm/aiter">ROCm AIter</a> - Contains FP8 matmul kernels, indicating AMD hardware FP8 matrix core support</li>
+  <li><a href="https://gpuopen.com/learn/wmma_on_rdna3/">WMMA on RDNA3</a> - Similar to WGEMM in NVIDIA</li>
+</ul>
+
+<h2>Key Hardware Features</h2>
+
+<h3>Warp Management</h3>
+<ul>
+  <li>Warps</li>
+  <li>Warp groups</li>
+  <li>Warp specialization</li>
+</ul>
+
+<h3>Memory Features</h3>
+<ul>
+  <li>TMA (Tensor Memory Accelerator)</li>
+  <li>Distributed shared memory</li>
+  <li>Tensor memory (TMEM)</li>
+</ul>
+
+<h3>Precision Support</h3>
+<p>Hardware-supported vs. simulated precision formats:</p>
+<ul>
+  <li>MXFP8</li>
+  <li>FP8</li>
+  <li>MXFP4</li>
+  <li>NVFP4</li>
+</ul>
+
+<h2>Software Tools and Frameworks</h2>
+
+<h3>Warp Specialization Support</h3>
+<ul>
+  <li><strong>Triton and Gluon</strong> - Support for warp specialization</li>
+  <li><strong>PyTorch and TLX</strong> - Warp specialization support</li>
+  <li><strong>JAX Pallas</strong> - <a href="https://docs.jax.dev/en/latest/pallas/gpu/blackwell_matmul.html#warp-specialization">Blackwell matmul support</a></li>
+</ul>
+
+<h3>Useful Links</h3>
+<ul>
+  <li><a href="https://github.com/facebookexperimental/triton/tree/tlx">Triton TLX</a></li>
+  <li><a href="https://pytorch.org/blog/fast-2-simplicial-attention-hardware-efficient-kernels-in-tlx/">PyTorch Fast-2 Simplicial Attention</a></li>
+  <li><a href="https://github.com/triton-lang/triton/tree/main/python/tutorials/gluon">Triton Gluon Tutorials</a></li>
+</ul>
+
+<h3>DSL Considerations</h3>
+<ul>
+  <li><strong>CuTe DSL</strong> - Currently no AMD support</li>
+  <li><strong>TMA on AMD</strong> - Unclear if AMD has TMA equivalent. Possible TDA implementation: <a href="https://github.com/triton-lang/triton/pull/8333">Triton PR #8333</a></li>
+</ul>
+
+<h2>References</h2>
+
+<ol>
+  <li><a href="https://docs.nvidia.com/cuda/parallel-thread-execution/#warp-level-matrix-instructions">NVIDIA PTX - Warp-Level Matrix Instructions</a></li>
+  <li><a href="https://news.ycombinator.com/item?id=45280592">Hacker News Discussion</a></li>
+  <li><a href="https://docs.nvidia.com/cuda/cuda-c-programming-guide/#compute-capabilities">CUDA Programming Guide - Compute Capabilities</a></li>
+  <li><a href="https://docs.nvidia.com/cutlass/media/docs/cpp/blackwell_functionality.html">CUTLASS Blackwell Functionality</a></li>
+  <li>Jarmusch, A., Graddon, N. and Chandrasekaran, S. (2025) "Dissecting the NVIDIA Blackwell Architecture with Microbenchmarks." arXiv. <a href="https://doi.org/10.48550/arXiv.2507.10789">https://doi.org/10.48550/arXiv.2507.10789</a></li>
+  <li>Luo, W. et al. (2024) "Benchmarking and Dissecting the Nvidia Hopper GPU Architecture." arXiv. <a href="https://doi.org/10.48550/arXiv.2402.13499">https://doi.org/10.48550/arXiv.2402.13499</a></li>
+  <li>Luo, W. et al. (2025) "Dissecting the NVIDIA Hopper Architecture through Microbenchmarking and Multiple Level Analysis." arXiv. <a href="https://doi.org/10.48550/arXiv.2501.12084">https://doi.org/10.48550/arXiv.2501.12084</a></li>
+  <li>Abdelkhalik, H. et al. (2022) "Demystifying the Nvidia Ampere Architecture through Microbenchmarking and Instruction-level Analysis." arXiv. <a href="https://doi.org/10.48550/arXiv.2208.11174">https://doi.org/10.48550/arXiv.2208.11174</a></li>
+  <li>Luhnen, T., Marschner, T. and Lal, S. "Benchmarking Thread Block Cluster - 2CTA MMA."</li>
+</ol>
