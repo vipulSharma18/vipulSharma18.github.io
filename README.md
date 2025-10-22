@@ -27,7 +27,6 @@ Open your browser and go to: `http://localhost:4000`
 - `img/` - Images
 - `index.html` - Homepage
 - `about.html` - About page
-- `contact.html` - Contact page with form
 
 ## Creating a New Blog Post
 
