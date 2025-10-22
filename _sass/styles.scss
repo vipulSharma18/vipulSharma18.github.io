@@ -24,4 +24,88 @@
       color: #0085a1 !important;
     }
   }
+  
+  #darkModeToggle {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    
+    &:hover {
+      color: #0085a1 !important;
+    }
+  }
+}
+
+// Dark mode styles
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #e4e4e4;
+  
+  #mainNav {
+    background-color: #2d2d2d !important;
+    border-bottom-color: #404040;
+    
+    .navbar-brand,
+    .nav-link {
+      color: #e4e4e4 !important;
+      
+      &:hover {
+        color: #4db8ff !important;
+      }
+    }
+    
+    .navbar-toggler {
+      border-color: #e4e4e4;
+    }
+  }
+  
+  .container {
+    color: #e4e4e4;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+  }
+  
+  a {
+    color: #4db8ff;
+    
+    &:hover {
+      color: #80ccff;
+    }
+  }
+  
+  .post-preview {
+    border-bottom-color: #404040;
+    
+    h2, h3 {
+      color: #e4e4e4;
+    }
+  }
+  
+  .post-meta,
+  .text-muted {
+    color: #a0a0a0 !important;
+  }
+  
+  hr {
+    border-color: #404040;
+  }
+  
+  footer {
+    background-color: #2d2d2d;
+    color: #a0a0a0;
+  }
+  
+  .btn-primary {
+    background-color: #4db8ff;
+    border-color: #4db8ff;
+    
+    &:hover {
+      background-color: #80ccff;
+      border-color: #80ccff;
+    }
+  }
 }
