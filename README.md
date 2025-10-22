@@ -36,9 +36,9 @@ Open your browser and go to: `http://localhost:4000`
 ```yaml
 ---
 layout: post
-title: "Your Post Title"
-subtitle: "Optional subtitle"
-date: YYYY-MM-DD HH:MM:SS
+title: "Numerical Stability of Operations"
+subtitle: "How do you ensure correctness of operations?"
+date: 2025-10-22 14:17:00
 background: '/img/posts/your-image.jpg'
 ---
 ```
