@@ -1,8 +1,8 @@
-title:              My Blog
-description:        A simple blog
-author:             Your Name
+title:              My Working Notes (WIP, not ready for public consumption)
+description:        A collection of what I'm reading and working on.
+author:             Vipul Sharma
 baseurl:            ""
-url:                "http://localhost:4000"
+url:                "https://vipulsharma18.github.io"
 
 # Social Profiles
 github_username:
