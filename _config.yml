@@ -1,19 +1,11 @@
 title:              My Blog
-email:              your-email@example.com
 description:        A simple blog
 author:             Your Name
 baseurl:            ""
 url:                "http://localhost:4000"
 
-# Social Profiles (optional - add your own)
-twitter_username:   
-github_username:    
-facebook_username:  
-instagram_username:  
-linkedin_username:
-
-# Add your google-analytics ID here to activate google analytics
-google_analytics:
+# Social Profiles
+github_username:
 
 # Build settings
 markdown:           kramdown
