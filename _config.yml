@@ -5,7 +5,7 @@ baseurl:            ""
 url:                "https://vipulsharma18.github.io"
 
 # Social Profiles
-github_username:
+github_username: https://github.com/vipulSharma18
 
 # Build settings
 markdown:           kramdown
